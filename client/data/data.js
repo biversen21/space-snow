@@ -16,4 +16,4 @@ var buildingData = [
 		path: 'foodSVG',
 		resourcePerMinute: 20
 	}
-]
+];

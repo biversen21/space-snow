@@ -13,7 +13,7 @@ var BuildingsView = Backbone.View.extend({
 		  this.collection.map(function(building){
 		  	return new BuildingEntryView({model: building}).render();
 		  })
-		)
+		);
 		
 	}
 });

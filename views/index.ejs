@@ -7,7 +7,20 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
     <script src="/js/lib.js"></script>
     <script src="/js/main.js"></script>
+
+		
+	<script>
+		$(function(){
+		  var buildingLibrary = new Buildings(buildingData);
+			var app = new AppModel({buildingLibrary: buildingLibrary});
+			var appView = new AppView({model: app});
+		
+			$('body').append(appView.render());
+		})
+	</script>
+
   </body>
 </html>

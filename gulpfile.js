@@ -111,7 +111,7 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('js', function() {
-  return gulp.src('client/**/*.js')
+  return gulp.src(['client/models/*.js', 'client/**/*.js'])
     .pipe(concat('main.js'))
     .pipe(gulp.dest('public/js'))
     .pipe(rename('main.min.js'))

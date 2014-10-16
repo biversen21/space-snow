@@ -5,7 +5,7 @@ var AppView = Backbone.View.extend({
 	},
 	
 	render: function(){
-		console.log('hit')
+
 		return this.$el.html([
 			this.buildingsView.$el,
 			this.playerBuildingsView.$el

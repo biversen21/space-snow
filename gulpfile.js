@@ -120,4 +120,7 @@ gulp.task('js', function() {
 });
 
 // Default Task
+gulp.task('deploy', ['bundle-libraries-auto', 'js', 'sass']);
+
+// Default Task
 gulp.task('default', ['lint', 'bundle-libraries-auto', 'js', 'sass', 'nodemon']);

@@ -25,10 +25,6 @@ MoonBase II: The Sheepening
 ## Requirements
 
 - Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
 
 ## Development
 
@@ -37,7 +33,7 @@ MoonBase II: The Sheepening
 From within the root directory:
 
 ```sh
-sudo npm install -g bower
+sudo npm install -g bower gulp
 npm install
 bower install
 ```

@@ -3,5 +3,5 @@ bower_components/
 *.log
 .DS_Store
 
-build/
-dist/
+public/js/
+public/css/

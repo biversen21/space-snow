@@ -1,5 +1,15 @@
-var gulp = require('gulp');
 var bower = require('bower');
+var underscore = require('underscore');
+var underscoreStr = require('underscore.string');
+var concat = require('gulp-concat');
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+var nodemon = require('gulp-nodemon');
+var sass = require('gulp-sass');
 
 gulp.task('bower', function(cb){
   bower.commands.install([], {save: true}, {})
@@ -8,17 +18,11 @@ gulp.task('bower', function(cb){
     });
 });
 
-var underscore = require('underscore');
-var underscoreStr = require('underscore.string');
-var concat = require('gulp-concat');
-var gulp = require('gulp');
-
-var exclude = ['lib1', 'lib2'];
-
 gulp.task('bundle-libraries-auto', ['bower'], function(){
   var bowerFile = require('./bower.json');
   var bowerPackages = bowerFile.dependencies;
   var bowerDir = './bower_components';
+  var exclude = [];
   var packagesOrder = [];
   var mainFiles = [];
 
@@ -77,5 +81,43 @@ gulp.task('bundle-libraries-auto', ['bower'], function(){
   // run the gulp stream
   return gulp.src(mainFiles)
     .pipe(concat('lib.js'))
-    .pipe(gulp.dest('./public/js'));
+    .pipe(gulp.dest('./public/js'))
+    .pipe(rename('lib.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('public/js'));
 });
+
+gulp.task('nodemon', function() {
+  return nodemon({
+    script: './bin/www',
+    ext: 'js html css scss'
+  })
+  .on('change', ['lint', 'js', 'sass'])
+});
+
+// Lint Task
+gulp.task('lint', function() {
+  return gulp.src('client/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+// Compile Our Sass
+gulp.task('sass', function() {
+  return gulp.src('client/scss/**/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('public/css'));
+});
+
+// Concatenate & Minify JS
+gulp.task('js', function() {
+  return gulp.src('client/**/*.js')
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('public/js'))
+    .pipe(rename('main.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('public/js'));
+});
+
+// Default Task
+gulp.task('default', ['lint', 'bundle-libraries-auto', 'js', 'sass', 'nodemon']);

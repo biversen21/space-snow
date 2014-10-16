@@ -14,6 +14,7 @@ var buildingData = [
 	{
 		name: 'food storage',
 		path: 'foodSVG',
+		time: 1500,
 		resourcePerMinute: 20
 	}
 ];

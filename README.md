@@ -33,9 +33,10 @@ MoonBase II: The Sheepening
 From within the root directory:
 
 ```sh
-sudo npm install -g bower gulp
+sudo npm install -g bower gulp nodemon
 npm install
 bower install
+gulp
 ```
 
 ### Roadmap

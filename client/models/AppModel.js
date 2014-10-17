@@ -4,7 +4,13 @@ var AppModel = Backbone.Model.extend({
     // this.set('playerScore', new PlayerScore());
 		
 		params.buildingLibrary.on('addToBoard', function(building) {
-			this.get('playerBuildings').add(building);
+      var buildingCollection = this.get('playerBuildings');
+      console.log(buildingCollection);
+      if(buildingCollection.length < 6) {
+        buildingCollection.add(building.toJSON());
+      } else {
+        alert('Too many buildings asshole!');
+      }
 		}, this);
 	}
 });

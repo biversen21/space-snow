@@ -1,5 +1,7 @@
 var Buildings = Backbone.Collection.extend({
 
-  model: Building
+  model: Building,
+  
+  url: '/base'
 	
 });

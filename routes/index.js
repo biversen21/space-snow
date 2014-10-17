@@ -22,32 +22,32 @@ router.get('/game', function(req, res) {
 router.get('/base', function(req, res) {
   res.json([
     {
-      id: 0,
-      name: 'Hydrofarm',
+      // id: 0,
+      name: 'hydro',
       imgUrl: 'hydro.png',
       position: 0,
       size: 1,
       underConstruction: false
     },
     {
-      id: 1,
-      name: 'Mine',
+      // id: 1,
+      name: 'mine',
       imgUrl: 'mine.png',
       position: 2,
       size: 2,
       underConstruction: false
     },
     {
-      id: 2,
-      name: 'Refinery',
+      // id: 2,
+      name: 'refinery',
       imgUrl: 'refinery.png',
       position: 4,
       size: 3,
       underConstruction: false
     },
     {
-      id: 3,
-      name: 'Science',
+      // id: 3,
+      name: 'science',
       imgUrl: 'science.png',
       position: 7,
       size: 3,

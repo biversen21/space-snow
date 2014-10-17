@@ -5,16 +5,16 @@ var BuildingEntryView = Backbone.View.extend({
 	
 	events: {
 		'click': function(){
-			var that = this;
-			console.log('click');
-			$('body').append('<span class="timetest">You are building a ' + this.model.attributes.name + '<span>');
-			
-			(function(){
-				setTimeout(function(){
-					that.model.addToBoard();
-					$('.timetest').remove();
-				}, that.model.attributes.time);
-			})();
+      
+      this.model.addToBoard();
+      
+      // var that = this;
+      			
+      // (function(){
+      //   setTimeout(function(){
+      //     that.model.addToBoard();
+      //   }, that.model.attributes.time);
+      // })();
 		}
 	},
 	

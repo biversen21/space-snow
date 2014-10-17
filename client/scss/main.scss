@@ -68,3 +68,44 @@ h1 {
   border-radius:10px;
   display: inline-block;
 }
+
+.building {
+  position: relative;
+  left: 18px;
+  top: 18px;
+  display: inline-block;
+  height: 80%;
+  width: 15%;
+  background-color: #74748A;
+  border-radius: 10px;
+  align: middle;
+}
+
+#science {
+  background: url('../img/building test 3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border: solid #74748A;
+}
+#something {
+  background: url('../img/building test 4.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border: solid #74748A;
+}
+#mine {
+  background: url('../img/Test building 2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border: solid #74748A;
+}
+#hydro {
+  background: url('../img/building 1 test.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border: solid #74748A;
+}

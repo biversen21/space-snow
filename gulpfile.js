@@ -87,12 +87,14 @@ gulp.task('bundle-libraries-auto', ['bower'], function(){
     .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('nodemon', function() {
+gulp.task('nodemon', ['lint', 'bundle-libraries-auto', 'js', 'sass'], function() {
   return nodemon({
     script: './bin/www',
     ext: 'js html css scss'
   })
-  .on('change', ['lint', 'js', 'sass'])
+  .on('change', ['lint', 'js', 'sass'], function(){
+    console.log('nodemon is now watching for changes to js, html, css, and scss files');
+  })
 });
 
 // Lint Task
@@ -123,4 +125,4 @@ gulp.task('js', function() {
 gulp.task('deploy', ['bundle-libraries-auto', 'js', 'sass']);
 
 // Default Task
-gulp.task('default', ['lint', 'bundle-libraries-auto', 'js', 'sass', 'nodemon']);
+gulp.task('default', ['nodemon']);

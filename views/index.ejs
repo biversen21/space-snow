@@ -29,11 +29,23 @@
 
   <script>
     $(function(){
-      var buildingLibrary = new Buildings(buildingData);
-      var app = new AppModel({buildingLibrary: buildingLibrary});
-      var appView = new AppView({model: app});
+      // var buildingLibrary = new Buildings(buildingData);
+      var buildingLibrary = new Buildings();
+      buildingLibrary.fetch({
+        success: function(buildingLibrary) {
+          var app = new AppModel({buildingLibrary: buildingLibrary});
+          var appView = new AppView({model: app});
+          $('body').append(appView.render());          
+        }
+      });
+      
+      var playerScore = new PlayerScore();
+      playerScore.fetch({
+        success: function(player) {
+          var playerScoreView = new PlayerScoreView({model: player});
+        }
+      });
 
-      $('body').append(appView.render());
     })
   </script>
 

@@ -1,11 +1,11 @@
 var PlayerBuildings = Buildings.extend({
 	
-	initialize: function(){
-		this.listenTo(this, 'add', this.draw);
-	},
-	
-	draw: function() {
-		
-	}
+	// initialize: function(){
+	// 	this.listenTo(this, 'increaseResources', this.draw);
+	// },
+	//
+	// draw: function() {
+	//     console.log('hit');
+	// }
 	
 });

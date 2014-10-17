@@ -1,8 +1,8 @@
 var PlayerBuildingsEntryView = Backbone.View.extend({
 	
-	tagName: 'div',
+	tagName: 'span',
 	
-	template: _.template('<span>You just added <%= name %>! Please wait <%= time %>, and then you will generate <%= resourcePerMinute %></span>'),
+	template: _.template(' <div class="building" id ="<%= name %>"></div>'),
 	
   render: function(){
 		return this.$el.html(this.template(this.model.attributes));

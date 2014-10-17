@@ -38,6 +38,13 @@
           $('body').append(appView.render());          
         }
       });
+      
+      var playerScore = new PlayerScore();
+      playerScore.fetch({
+        success: function(player) {
+          var playerScoreView = new PlayerScoreView({model: player});
+        }
+      });
 
     })
   </script>

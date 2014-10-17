@@ -8,8 +8,9 @@ var PlayerBuildingsView = Backbone.View.extend({
 	
 	render: function(){
 		this.$el.children().detach();
-		
-		this.$el.html('<span>Player Buildings View Test</span>').append(
+		$('.dump').empty();
+
+      $('.dump').append(
 		  this.collection.map(function(building){
 		  	return new PlayerBuildingsEntryView({model: building}).render();
 		  })

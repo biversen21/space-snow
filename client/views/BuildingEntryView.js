@@ -1,25 +1,25 @@
 var BuildingEntryView = Backbone.View.extend({
-	tagName: 'div',
+	tagName: 'span',
 	
-	template: _.template('<span>Name: <%= name %> | Time to Build: <%= time %> | Resources: <%= resourcePerMinute %></span>'),
+  template: _.template(' <div class="building" id ="<%= name %>"></div>'),
 	
 	events: {
 		'click': function(){
-			var that = this;
-			
-			$('body').append('<span class="timetest">You are building a ' + this.model.attributes.name + '<span>');
-			
-			(function(){
-				setTimeout(function(){
-					that.model.addToBoard();
-					that.model.startResources();
-					$('.timetest').remove();
-				}, that.model.attributes.time);
-			})();
+      
+      this.model.addToBoard();
+      
+      // var that = this;
+      			
+      // (function(){
+      //   setTimeout(function(){
+      //     that.model.addToBoard();
+      //   }, that.model.attributes.time);
+      // })();
 		}
 	},
 	
 	render: function(){
-		return this.$el.html(this.template(this.model.attributes));
+    return this.$el.html(this.template(this.model.attributes));
+    // return $('.build').append(this.template(this.model.attributes));
 	}
 });

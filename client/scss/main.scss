@@ -1,4 +1,70 @@
 body {
-  background-color: #111;
+  background-color: black;
   color: #eee;
+  font-family: courier;
+}
+
+h1 {
+  font-size: 26pt;
+  color: #575769;
+}
+.h4 {
+  padding: 2px;
+}
+
+.background {
+  position: absolute;
+  background: url('../img/spacesnow.jpg');
+  background-position:bottom;
+  height: 71.5%;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+.auth {
+  display: table;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #575769;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.statistics {
+  height: 300px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: #575769;
+  opacity: 0.9;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.buy {
+  position: absolute;
+  bottom: 10px;
+  background-color: #575769;
+  width: 20%;
+  height: 25%;
+  border-radius:10px;
+  display: inline-block;
+}
+
+.build {
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  background-color: #575769;
+  width: 78.7%;
+  height: 25%;
+  border-radius:10px;
+  display: inline-block;
 }

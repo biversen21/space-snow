@@ -43,6 +43,10 @@
       playerScore.fetch({
         success: function(player) {
           var playerScoreView = new PlayerScoreView({model: player});
+          // setInterval(function(){
+          //   playerScore.fetch();
+          //   console.log('refetch');
+          // }, 1000);
         }
       });
 

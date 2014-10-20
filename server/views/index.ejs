@@ -29,7 +29,7 @@
 
   <script>
     $(function(){
-      // var buildingLibrary = new Buildings(buildingData);
+
       var buildingLibrary = new Buildings();
       buildingLibrary.fetch({
         success: function(buildingLibrary) {
@@ -39,16 +39,6 @@
         }
       });
       
-      var playerScore = new PlayerScore();
-      playerScore.fetch({
-        success: function(player) {
-          var playerScoreView = new PlayerScoreView({model: player});
-          // setInterval(function(){
-          //   playerScore.fetch();
-          //   console.log('refetch');
-          // }, 1000);
-        }
-      });
 
     })
   </script>

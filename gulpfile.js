@@ -123,8 +123,11 @@ gulp.task('js', function() {
 });
 
 gulp.task('test', function () {
-  return gulp.src('test/**/*.js', {read: false})
-    .pipe(mocha({reporter: 'spec'}));
+  return gulp.src('test/**/*.js')
+    .pipe(mocha())
+    .once('end', function () {
+      process.exit();
+    });;
 });
 
 // Install and concat/minify all the correct files for production

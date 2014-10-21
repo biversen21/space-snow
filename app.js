@@ -9,7 +9,11 @@ var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
 
 // Start Mongo
-require('./server/db/config.js');
+var mongoose = require('mongoose');
+var mongoUri = require('./server/db/config.js').uri;
+mongoose.connect(mongoUri);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Mongo connection error:'));
 
 // Start app
 var app = express();

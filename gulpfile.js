@@ -10,6 +10,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var nodemon = require('gulp-nodemon');
 var sass = require('gulp-sass');
+var mocha = require('gulp-mocha');
 
 gulp.task('bower', function(cb){
   bower.commands.install([], {save: true}, {})
@@ -121,7 +122,12 @@ gulp.task('js', function() {
     .pipe(gulp.dest('public/js'));
 });
 
-// Default Task
+gulp.task('test', function () {
+  return gulp.src('test/**/*.js', {read: false})
+    .pipe(mocha({reporter: 'spec'}));
+});
+
+// Install and concat/minify all the correct files for production
 gulp.task('deploy', ['bundle-libraries-auto', 'js', 'sass']);
 
 // Default Task

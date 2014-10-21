@@ -55,8 +55,6 @@ h1 {
   width: 80%;
   left: 10%;
   right: 10%;
-//  background-color: gray;
-//  opacity: 0.4;
 }
 
 .buy {
@@ -87,9 +85,10 @@ h1 {
   display: inline-block;
   height: 80%;
   width: 15%;
-  background-color: #74748A;
   border-radius: 10px;
   align: middle;
+  border: solid #74748A;
+
 }
 
 #science {
@@ -97,26 +96,34 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  border: solid #74748A;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 #refinery {
   background: url('../img/refinery.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  border: solid #74748A;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 #mine {
   background: url('../img/mine.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  border: solid #74748A;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 #hydro {
   background: url('../img/hydro.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  border: solid #74748A;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }

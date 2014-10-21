@@ -1,0 +1,54 @@
+body {
+  background-color: black;
+  color: #eee;
+  font-family: courier;
+}
+
+h1 {
+  padding: 20px;
+}
+
+form {
+  font-size: 16pt;
+  text-align: center;
+}
+
+input {
+  margin: 0px auto 20px auto;
+  font-size: 16pt;
+}
+
+.background {
+  position: absolute;
+  background: url('../img/spacesnow.jpg');
+  background-position:bottom;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  height: 98%;
+  width: 98%;
+  display: inline-block;
+  text-align: center;
+}
+
+.window {
+  height: 55%;
+  width: 55%;
+  border-radius: 10px;
+  background-color: #575769;
+  margin: 100px auto 0px auto;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.button {
+  margin: 10px auto 20px auto;
+  height: 30px;
+  width: 350px;
+  border-radius: 10px;
+  background-color: #0B0B3B;
+  opacity: 1;
+}
+
+.signup {
+
+}

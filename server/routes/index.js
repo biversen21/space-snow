@@ -20,7 +20,7 @@ router.get('/game', function(req, res) {
 });
 
 router.get('/base', function(req, res) {
-  res.json([
+  res.send([
     {
       // id: 0,
       name: 'hydro',

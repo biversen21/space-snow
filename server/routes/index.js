@@ -19,6 +19,19 @@ router.get('/game', function(req, res) {
   })
 });
 
+router.get('/player', function(req, res) {
+  res.send([
+    {
+      name: 'hydro',
+      imgUrl: 'hydro.png',
+      position: 0,
+      size: 1,
+      cost: 300,
+      underConstruction: false
+    }
+  ]);
+});
+
 router.get('/base', function(req, res) {
   res.send([
     {
@@ -54,7 +67,7 @@ router.get('/base', function(req, res) {
       imgUrl: 'science.png',
       position: 7,
       size: 3,
-      cost: 500,
+      cost: 600,
       underConstruction: true
     }
   ]);

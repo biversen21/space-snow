@@ -27,6 +27,7 @@ router.get('/base', function(req, res) {
       imgUrl: 'hydro.png',
       position: 0,
       size: 1,
+      cost: 300,
       underConstruction: false
     },
     {
@@ -35,6 +36,7 @@ router.get('/base', function(req, res) {
       imgUrl: 'mine.png',
       position: 2,
       size: 2,
+      cost: 300,
       underConstruction: false
     },
     {
@@ -43,6 +45,7 @@ router.get('/base', function(req, res) {
       imgUrl: 'refinery.png',
       position: 4,
       size: 3,
+      cost: 500,
       underConstruction: false
     },
     {
@@ -51,6 +54,7 @@ router.get('/base', function(req, res) {
       imgUrl: 'science.png',
       position: 7,
       size: 3,
+      cost: 500,
       underConstruction: true
     }
   ]);

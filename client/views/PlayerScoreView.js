@@ -13,7 +13,6 @@ var PlayerScoreView = Backbone.View.extend({
     $('.statistics').append('<span>Name: ' + this.model.attributes.name + '<span><br>');
     for (var resource in this.model.attributes.resources) {
       $('.statistics').append('<span>' + resource + ': ' + this.model.attributes.resources[resource] + '<span><br>');
-      console.log(this.model.attributes.resources[resource]);
     }
   }
 	

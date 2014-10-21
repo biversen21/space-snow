@@ -11,12 +11,17 @@ router.get('/game', function(req, res) {
     id: 0,
     name: 'Space Sheep',
     resources: {
-      moonitonium: 500,
+      moonitonium: 2000,
       moonitoniumPerTurn: 5,
       maxMoonitonium: 1000,
       energyCap: 80
     }
   })
+});
+
+router.put('/game', function(req, res) {
+  console.log('put success');
+  res.send({'status': 'success'});
 });
 
 router.get('/player', function(req, res) {
@@ -32,7 +37,13 @@ router.get('/player', function(req, res) {
   ]);
 });
 
-router.get('/base', function(req, res) {
+
+router.post('/player', function(req, res) {
+  console.log('post success');
+  res.send({'status': 'success'});
+});
+
+router.get('/library', function(req, res) {
   res.send([
     {
       // id: 0,

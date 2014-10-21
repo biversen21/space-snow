@@ -6,12 +6,20 @@ var PlayerScoreView = Backbone.View.extend({
     this.render();
   },
   
+  events: {
+    'updateScore': function(){
+      console.log('fired');
+      this.render();
+    }
+  },
+  
   render: function(){
-    $('.statistics').append('<span>Name: ' + this.model.attributes.name + '<span><br>');
+    $('.playerStats').remove();
+    $('.statistics').append('<span class="playerStats">Name: ' + this.model.attributes.name + '<span><br>');
     
     // loops player score and renders resources
     for (var resource in this.model.attributes.resources) {
-      $('.statistics').append('<span>' + resource + ': ' + this.model.attributes.resources[resource] + '<span><br>');
+      $('.playerStats').append('<span>' + resource + ': ' + this.model.attributes.resources[resource] + '<span><br>');
     }
   }
 	

@@ -78,17 +78,22 @@ h1 {
   display: inline-block;
 }
 
-.building {
+.onScreen {
+  display: inline-block;
+  min-height: 100%;
+  width:100px;
+}
+
+.example {
   position: relative;
   left: 18px;
   top: 18px;
   display: inline-block;
   height: 80%;
   width: 15%;
-  border-radius: 10px;
   align: middle;
   border: solid #74748A;
-
+  border-radius: 10px;
 }
 
 #science {
@@ -96,34 +101,22 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
 }
 #refinery {
   background: url('../img/refinery.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
 }
 #mine {
   background: url('../img/mine.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
 }
 #hydro {
   background: url('../img/hydro.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
 }

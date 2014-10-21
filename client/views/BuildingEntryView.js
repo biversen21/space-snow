@@ -1,7 +1,7 @@
 var BuildingEntryView = Backbone.View.extend({
 	tagName: 'span',
 	
-  template: _.template(' <div class="building" id ="<%= name %>"></div>'),
+  template: _.template(' <div class="example" id ="<%= name %>"></div>'),
 	
 	events: {
 		'click': function(){

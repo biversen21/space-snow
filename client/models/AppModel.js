@@ -14,6 +14,11 @@ var AppModel = Backbone.Model.extend({
       
       if ((buildingCollection.length < 6) && (affordBuilding)) {
         buildingCollection.add(building.toJSON());
+        building.save({
+          success: function() {
+            console.log('building save success');
+          }
+        });
       } else if (!affordBuilding){
         alert('You can\'t afford that!');
       } else {

@@ -25,7 +25,21 @@ var PlayerScore = Backbone.Model.extend({
     var buildingCost = building.attributes.cost;
     var currentResources = this.attributes.resources;
     
-    return buildingCost <= currentResources.moonitonium ? true : false;
+    if (buildingCost <= currentResources.moonitonium) {
+      currentResources.moonitonium -= buildingCost;
+      var that = this;
+      
+      that.save(null, {
+        success: function() {
+          console.log('resource success');
+          var playerScoreView = new PlayerScoreView({model: that});
+        }
+      });
+      
+      return true;
+    } else {
+      return false;
+    }
   }
 
 });

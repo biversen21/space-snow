@@ -20,6 +20,12 @@ router.put('/game', function(req, res) {
   res.send(playerStub);
 });
 
+router.post('/game', function(req, res) {
+
+  playerStub = req.body;
+  res.send(playerStub);
+});
+
 router.get('/library', function(req, res) {
   res.send(libraryStub);
 });

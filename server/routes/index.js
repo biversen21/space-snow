@@ -17,6 +17,7 @@ router.get('/game', function(req, res) {
 router.put('/game', function(req, res) {
 
   playerStub = req.body;
+  res.send(playerStub);
 });
 
 router.get('/library', function(req, res) {

@@ -22,11 +22,12 @@ var PlayerScore = Backbone.Model.extend({
   
   // helper function to check resouces when adding new buildings
   checkResource: function(building){
+    console.log(this.attributes.resources);
     var buildingCost = building.attributes.cost;
     var currentResources = this.attributes.resources;
     
-    if (buildingCost <= currentResources.moonitonium) {
-      currentResources.moonitonium -= buildingCost;
+    if (buildingCost <= currentResources.minerals) {
+      currentResources.minerals -= buildingCost;
       var that = this;
       
       that.save(null, {

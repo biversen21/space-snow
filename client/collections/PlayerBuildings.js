@@ -1,15 +1,18 @@
 var PlayerBuildings = Buildings.extend({
 	
-  url: '/player',
+  url: '/game',
   
   initialize: function() {
-
-    // on initialize, hits server for current player building collection
-    this.fetch({
-      success: function() {
-        console.log('player buildings fetched');
-      }
-    });
+    // var that = this;
+    // // on initialize, hits server for current player building collection
+    // this.fetch({
+    //   success: function() {
+    //     console.log(that);
+    //     console.log('player buildings fetched');
+    //   }
+    // });
+    
+    // console.log(this);
   }
 	
 });

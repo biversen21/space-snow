@@ -1,4 +1,5 @@
 var express = require('express');
+var connect = require('./server/db/connect.js');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -8,15 +9,11 @@ var bodyParser = require('body-parser');
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
 
-// Start Mongo
-var mongoose = require('mongoose');
-var mongoUri = require('./server/db/config.js').uri;
-mongoose.connect(mongoUri);
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'Mongo connection error:'));
-
 // Start app
 var app = express();
+
+// Connect to the database
+var db = connect();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'server/views'));

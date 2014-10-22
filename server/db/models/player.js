@@ -6,37 +6,27 @@ var Schema = mongoose.Schema;
 
 var PlayerSchema = new Schema({
 
-  id: Number,
   password: String,
-  name: String
+  name: String,
 
   buildings: [{
-    id: Number,
     name: String,
     imgUrl: String,
-    posX: Number,
-    posY: Number,
-    createdAt: Date,
-    updatedAt: Date,
-    waterProduced: Number,
-    waterConsumed: Number,
-    mineralsProduced: Number,
-    mineralsConsumed: Number,
-    refiningCapacity: Number,
-    scienceProduced: Number,
-    underConstruction: Boolean
+    position: Number,
+    size: Number,
+    waterProduced: { type: Number, default: 0 },
+    waterConsumed: { type: Number, default: 0 },
+    mineralsProduced: { type: Number, default: 0 },
+    mineralsConsumed: { type: Number, default: 0 },
+    refiningCapacity: { type: Number, default: 0 },
+    scienceProduced: { type: Number, default: 0 },
+    underConstruction: { type: Boolean, default: false }
   }],
 
   resources: {
     water: Number,
     minerals: Number,
     moonitonium: Number
-  },
-
-  stats: {
-    waterProducedPerTurn: Number,
-    waterConsumedPerTurn: Number,
-    netWaterPerTurn: Number,
   }
 
 });

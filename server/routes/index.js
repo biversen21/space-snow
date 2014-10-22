@@ -11,12 +11,18 @@ router.get('/', function(req, res) {
 
 router.get('/game', function(req, res) {
   Player.findOne({ name: 'Space Sheep' }, function(err, player) {
-    res.json(player)
+    res.json(player);
   });
 });
 
 router.put('/game', function(req, res) {
   Player.update({ name: 'Space Sheep' }, req.body);
+  res.send({'putSuccess': 'success'});
+});
+
+router.post('/game', function(req, res) {
+  Player.update({ name: 'Space Sheep' }, req.body);
+  res.send({'postSuccess': 'success'});
 });
 
 router.get('/library', function(req, res) {

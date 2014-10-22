@@ -16,14 +16,7 @@ var PlayerScore = Backbone.Model.extend({
     if (buildingCost <= currentResources.minerals) {
       currentResources.minerals -= buildingCost;
       var that = this;
-      
-      that.save(null, {
-        success: function() {
-          console.log('resource success');
-          var playerScoreView = new PlayerScoreView({model: that});
-        }
-      });
-      
+      var playerScoreView = new PlayerScoreView({model: that});     
       return true;
     } else {
       return false;

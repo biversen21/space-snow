@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cycle = require('./server/cycle/run.js');
 
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
@@ -14,6 +15,10 @@ var app = express();
 
 // Connect to the database
 var db = connect();
+
+// Start automatic processing
+cycle.setInterval(3000);
+cycle.start();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'server/views'));

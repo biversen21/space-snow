@@ -34,7 +34,6 @@
       var buildingLibrary = new Buildings();
       buildingLibrary.fetch({
         success: function(buildingLibrary) {
-          console.log('starting library fetched');
           var app = new AppModel({buildingLibrary: buildingLibrary}, function(){
             var appView = new AppView({model: app});            
             $('body').append(appView.render());          

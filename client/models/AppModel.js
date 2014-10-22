@@ -20,7 +20,10 @@ var AppModel = Backbone.Model.extend({
         cb();
         
         playerScore = that.get('playerScore');
-        buildingCollection = that.get('playerBuildings');      
+        buildingCollection = that.get('playerBuildings');
+        // setInterval(function() {
+        //   playerModel.fetch();
+        // }, 1000);
       }
     });   
     
@@ -30,7 +33,8 @@ var AppModel = Backbone.Model.extend({
       
       if ((buildingCollection.length < 6) && (affordBuilding)) {
         buildingCollection.add(building.toJSON());
-        playerModel.save({
+        playerModel.attributes.buildings.push(building);
+        playerModel.save(null, {
           success: function() {
             console.log('building save success');
           }

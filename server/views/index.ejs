@@ -15,8 +15,7 @@
       <div class='statistics'>
         <h3>Statistics</h3>
       </div>
-      <div class="dump">
-      </div>
+      <div class="dump"></div>
     </div>
     <div class='userControls'>
       <div class='buy'></div>
@@ -27,6 +26,7 @@
     <script src="/js/lib.js"></script>
     <script src="/js/main.js"></script>
 
+
   <script>
     $(function(){
       
@@ -35,11 +35,13 @@
       buildingLibrary.fetch({
         success: function(buildingLibrary) {
           console.log('starting library fetched');
-          var app = new AppModel({buildingLibrary: buildingLibrary});
-          var appView = new AppView({model: app});
-          $('body').append(appView.render());
+          var app = new AppModel({buildingLibrary: buildingLibrary}, function(){
+            var appView = new AppView({model: app});            
+            $('body').append(appView.render());          
+          });
         }
       });
+      
 
     })
   </script>

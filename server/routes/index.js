@@ -8,6 +8,7 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+
 router.get('/game', function(req, res) {
   Player.findOne({ name: 'Space Sheep' }, function(err, player) {
     res.json(player)

@@ -7,14 +7,6 @@ var BuildingEntryView = Backbone.View.extend({
 		'click': function(){
       
       this.model.addToBoard();
-      
-      // var that = this;
-      			
-      // (function(){
-      //   setTimeout(function(){
-      //     that.model.addToBoard();
-      //   }, that.model.attributes.time);
-      // })();
 		}
 	},
 	

@@ -6,6 +6,7 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+
 router.get('/game', function(req, res) {
   res.json({
     id: 0,
@@ -36,7 +37,6 @@ router.get('/player', function(req, res) {
     }
   ]);
 });
-
 
 router.post('/player', function(req, res) {
   console.log('post success');

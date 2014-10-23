@@ -1,7 +1,5 @@
-var connect = require('../db/connect.js');
+var connection = require('../db/connection.js');
 var Player = require('../db/models/player.js');
-
-var connection = connect();
 
 var processPlayer = function(player) {
   var buildings = player.buildings;

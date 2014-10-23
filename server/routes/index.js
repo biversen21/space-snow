@@ -7,9 +7,8 @@ var id;
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Moon Base' });
 });
-
 
 router.get('/game', function(req, res) {
   Player.findOne({ name: 'Space Sheep' }, function(err, player) {

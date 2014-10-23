@@ -1,6 +1,5 @@
 module.exports = {
 
-    id: 0,
     password: 'abracadabra',
     name: 'Space Sheep',
 

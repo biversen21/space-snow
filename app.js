@@ -1,5 +1,4 @@
 var express = require('express');
-var connect = require('./server/db/connect.js');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -14,7 +13,7 @@ var users = require('./server/routes/users');
 var app = express();
 
 // Connect to the database
-var db = connect();
+var connection = require('./server/db/connection.js');
 
 // Start automatic processing
 cycle.setInterval(3000);

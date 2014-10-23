@@ -40,7 +40,6 @@ var Building = Backbone.Model.extend({
       var increment = 50;
       return Math.round(position/increment)*increment;
     };
-  },
-
+  }
 
 });

@@ -1,3 +1,5 @@
 var PlayerModel = Backbone.Model.extend({
-  url: '/game'
+  url: '/game',
+  
+  idAttribute: "_id"
 });

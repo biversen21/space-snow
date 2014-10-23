@@ -18,15 +18,14 @@ router.get('/game', function(req, res) {
 });
 
 router.put('/game', function(req, res) {
-  // console.log(req.body);
-  Player.update({ name: 'Space Sheep' }, req.body);
-  res.send({'putSuccess': 'success'});
-});
-
-router.post('/game', function(req, res) {
-  // console.log(req.body);
-  Player.update({ name: 'Space Sheep' }, req.body);
-  res.send({'postSuccess': 'success'});
+  console.log(req.body);
+  Player.findOne({ name: 'Space Sheep' }, function(err, player) {
+    player.update(req.body, { overwrite: true }, function(err) {
+      if (!err) {
+        res.send({'putSuccess': 'success'});
+      }
+    });
+  });  
 });
 
 router.get('/library', function(req, res) {

@@ -22,7 +22,7 @@ var PlayerScoreView = Backbone.View.extend({
     for (var resource in this.model.attributes) {
       playerStats += '<span>' + resource + ': ' + this.model.attributes[resource] + '<span><br>';
     }
-    if (this.model.attributes['minerals'] > 50) {
+    if (this.model.attributes.minerals > 50) {
       playerStats += '<button class="refine">Refine</button>';      
     }
     return this.$el.append(playerStats);

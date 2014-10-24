@@ -7,6 +7,7 @@ var processPlayer = function(player) {
 
   for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
+    // console.log(building);
     switch (building.name) {
     case "hydro":
       player.resources.water += building.waterProduced;

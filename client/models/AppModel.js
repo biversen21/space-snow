@@ -4,7 +4,6 @@ var AppModel = Backbone.Model.extend({
     
     var that = this;
     var buildingCollection;
-    that.playerScore = {};
     
     // sets playerModel and gets player data from server
     var playerModel = new PlayerModel();
@@ -14,54 +13,61 @@ var AppModel = Backbone.Model.extend({
       success: function() {
         var playerBoard = playerModel.attributes.buildings;
         var playerResources = playerModel.attributes.resources;
+        
         that.set('playerBuildings', new PlayerBuildings(playerBoard));
-        that.playerScore = new PlayerScore(playerResources);
+        that.playerScore = new PlayerScore(playerModel);
         that.playerScoreView = new PlayerScoreView({model: that.playerScore});
+        
+        // call binding method
         setupScore();
+        
         // callback triggers, creating appView which is dependent upon above attributes
         cb();
         buildingCollection = that.get('playerBuildings');
       }
     });
     
+    // function to bind refineMinerals to playerscore model. processes refining mechanics
     var setupScore = function() {
       that.playerScore.on('refineMinerals', function(){
         var currentResources = playerModel.attributes.resources;
-        if (currentResources.minerals > 50) {
-          currentResources.minerals -= 50;
-          currentResources.moonitonium += 1;
-        }
-        playerModel.save(null, {
-          success: function(){
-            that.playerScoreView.render();
-          }
-        });
+
+        currentResources.minerals -= 50;
+        currentResources.moonitonium += 1;
+        
+        playerModel.save();
       });
     };
     
     var updatePlayerData = function(){
-      playerModel.fetch({
       
-        // on success initializes new instances of playerBuildings and playerScore using playerModel attributes
+      // synch with server and pull updated resources
+      playerModel.fetch({
         success: function() {
           var playerResources = playerModel.attributes.resources;
-          that.playerScore.set({minerals: playerResources.minerals});
-          that.playerScore.set({water: playerResources.water});
-          that.playerScore.set({moonitonium: playerResources.moonitonium});
+          
+          // set playerscore attributes based on server response 
+          that.playerScore.set({minerals: playerResources.minerals, water: playerResources.water, moonitonium: playerResources.moonitonium});
           that.playerScoreView.render();
           buildingCollection = that.get('playerBuildings');
         }
       });
     }; 
     
-    setInterval(function() { updatePlayerData(); }, 3000);
+    setInterval(function() { updatePlayerData(); }, 1000);
     
     // logic to handle whether building can be added to board based on size and resource cost
     params.buildingLibrary.on('addToBoard', function(building) {
+      
+      // runs playerscore method to check resource availability
       var affordBuilding = that.playerScore.checkResource(building);
       
       if ((buildingCollection.length < 10) && (affordBuilding)) {
+        
+        // adds building to building collection as JSON to allow multiple copies of single model
         buildingCollection.add(building.toJSON());
+        
+        // adds buidling to playermodel
         playerModel.attributes.buildings.push(building);
         that.playerScoreView.render();
         playerModel.save(null, {

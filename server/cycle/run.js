@@ -3,14 +3,27 @@ var Player = require('../db/models/player.js');
 
 var processPlayer = function(player) {
   var buildings = player.buildings;
-
   console.log('Player has %s water', player.resources.water);
 
   for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
-
-    player.resources.water = player.resources.water + building.waterProduced;
-
+    switch (building.name) {
+    case "hydro":
+      player.resources.water += building.waterProduced;
+      break;
+    case "mine":
+      if (player.resources.water > building.waterConsumed) {
+        player.resources.minerals += building.mineralsProduced;
+        player.resources.water -= building.waterConsumed; 
+      }
+      break;
+    case "refinery":
+      break;
+    case "science":
+      break;
+    default: 
+      console.log('not built yet');
+    }
   };
 
   console.log('Player has %s water', player.resources.water);

@@ -20,14 +20,13 @@ var AppModel = Backbone.Model.extend({
           
           // callback triggers, creating appView which is dependent upon above attributes
           cb();
-          playerModel.fetch();
           playerScore = that.get('playerScore');
           buildingCollection = that.get('playerBuildings');
         }
       });
     }; 
     
-    setInterval(function() {getPlayerData()}, 3000);
+    setInterval(function() {getPlayerData(); }, 3000);
     
     // logic to handle whether building can be added to board based on size and resource cost
     params.buildingLibrary.on('addToBoard', function(building) {
@@ -36,7 +35,6 @@ var AppModel = Backbone.Model.extend({
       if ((buildingCollection.length < 6) && (affordBuilding)) {
         buildingCollection.add(building.toJSON());
         playerModel.attributes.buildings.push(building);
-        playerModel.attributes.resources.minerals -= building.attributes.cost;
         playerModel.save(null, {
           success: function() {
             console.log('player save success');

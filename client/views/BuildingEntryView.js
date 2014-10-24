@@ -5,7 +5,6 @@ var BuildingEntryView = Backbone.View.extend({
 	
 	events: {
 		'click': function(){
-      
       this.model.addToBoard();
 		}
 	},

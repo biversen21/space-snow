@@ -11,6 +11,5 @@ var BuildingEntryView = Backbone.View.extend({
 	
 	render: function(){
     return this.$el.html(this.template(this.model.attributes));
-    // return $('.build').append(this.template(this.model.attributes));
 	}
 });

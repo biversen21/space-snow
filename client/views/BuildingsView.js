@@ -1,4 +1,7 @@
 var BuildingsView = Backbone.View.extend({
+  
+  el: '.build',
+  
   tagName: 'div',
 	
 	initialize: function(){
@@ -7,8 +10,8 @@ var BuildingsView = Backbone.View.extend({
 	
 	render: function(){
 		this.$el.children().detach();
-		$('.build').empty();
-    $('.build').append(
+		this.$el.empty();
+    this.$el.append(
 		  this.collection.map(function(building){
 		  	return new BuildingEntryView({model: building}).render();
 		  })

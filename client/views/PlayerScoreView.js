@@ -9,8 +9,7 @@ var PlayerScoreView = Backbone.View.extend({
   },
   
   events: {
-    "click .refine": function(){
-      console.log('fired');
+    'click .refine': function(){
       this.model.refine();
     }
   },
@@ -23,17 +22,10 @@ var PlayerScoreView = Backbone.View.extend({
     for (var resource in this.model.attributes) {
       playerStats += '<span>' + resource + ': ' + this.model.attributes[resource] + '<span><br>';
     }
-    playerStats += '<span class="refine">Refine</span>';
+    if (this.model.attributes['minerals'] > 50) {
+      playerStats += '<button class="refine">Refine</button>';      
+    }
     return this.$el.append(playerStats);
-    
-    // $('.playerStats').remove();
-    // $('.statistics').append('<span class="playerStats">Name: ' + this.model.attributes.name + '<span><br>');
-    
-    // loops player score and renders resources
-    // for (var resource in this.model.attributes) {
-    //   $('.playerStats').append('<span>' + resource + ': ' + this.model.attributes[resource] + '<span><br>');
-    // }
-    // $('.playerStats').append('<button class="refine">Refine</button>');
   }
 	
 });

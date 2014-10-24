@@ -5,21 +5,21 @@ var BuildingEntryView = Backbone.View.extend({
 
   events: {
     
-    'click': function(building){
-      this.model.addToBoard(building);
-    }
-    // 'mousedown': function(event){
-    //   var clickEvent = event;
-    //   var that = this;
-    //   console.log(event);
-    //   console.log(this);
-    //   this.model.drag(clickEvent, that);
-    // },
-    //
-    // 'mouseup': function(){
-    //   console.log('adding to board in view');
-    //   this.model.addToBoard();
+    // 'click': function(building){
+    //   this.model.addToBoard(building);
     // }
+    'mousedown': function(event){
+      var clickEvent = event;
+      var that = this;
+      console.log(event);
+      console.log(this);
+      this.model.drag(clickEvent, that);
+    },
+
+    'mouseup': function(){
+      console.log('adding to board in view');
+      this.model.addToBoard();
+    }
   },
 
   render: function(){

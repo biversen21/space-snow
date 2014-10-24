@@ -7,12 +7,12 @@ var BuildingEntryView = Backbone.View.extend({
 
     'mousedown': function(event){
       var clickEvent = event;
-      that = this;
+      var that = this;
       this.model.drag(clickEvent, that);
     },
 
-    'mouseup' : function(){
-      console.log('adding to board');
+    'mouseup': function(){
+      console.log('adding to board in view');
       this.model.addToBoard();
     }
   },

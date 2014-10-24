@@ -3,6 +3,7 @@ var Building = Backbone.Model.extend({
   url: '/player',
 
   addToBoard: function(){
+    console.log('adding to board in model');
   	this.trigger('addToBoard', this);
   },
 
@@ -26,17 +27,19 @@ var Building = Backbone.Model.extend({
       $(ghost).css({
         'top': round(e.pageY - 50),
         'left': round(e.pageX - 50)
-      })
-    })
+      });
+    });
 
+    // on mouseup, remove ghost and add model to collection
     $('body').on('mouseup', function(e){
       $(ghost).remove();
-    })
+      this.addToBoard();
+    }.bind(this));
 
     round = function(position){
       var increment = 50;
       return Math.round(position/increment)*increment;
-    }
+    };
   },
 
 

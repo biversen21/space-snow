@@ -29,15 +29,19 @@
 
   <script>
     $(function(){
-      
+      var loaded = false;
       // initalize application with library of possible buildings to construct
       var buildingLibrary = new Buildings();
       buildingLibrary.fetch({
         success: function(buildingLibrary) {
-          var app = new AppModel({buildingLibrary: buildingLibrary}, function(){
-            var appView = new AppView({model: app});            
-            $('body').append(appView.render());          
-          });
+          if (!loaded) {
+            var app = new AppModel({buildingLibrary: buildingLibrary}, function(){
+              var appView = new AppView({model: app});            
+              $('body').append(appView.render());          
+            });
+            console.log(loaded);
+            loaded = true;            
+          }
         }
       });
       

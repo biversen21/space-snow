@@ -1,0 +1,45 @@
+// specifics for building images; onScreen denotes completed buildings, as opposed to examples.
+
+//imports to main.scss
+
+#hydro.onScreen {
+  height: 100%;
+  width: 50px;
+}
+#mine.onScreen {
+  height: 100%;
+  width: 100px;
+}
+#science.onScreen {
+  height: 100%;
+  width: 150px;
+}
+#refinery.onScreen {
+  height: 100%;
+  width: 150px;
+}
+
+#science {
+  background: url('../img/science.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+#refinery {
+  background: url('../img/refinery.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+#mine {
+  background: url('../img/mine.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+#hydro {
+  background: url('../img/hydro.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}

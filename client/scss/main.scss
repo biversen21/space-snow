@@ -1,7 +1,12 @@
+@import 'buildings';
+
 body {
   background-color: black;
   color: #eee;
   font-family: courier;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 h1 {
@@ -80,8 +85,15 @@ h1 {
 
 .onScreen {
   display: inline-block;
-  min-height: 100%;
-  width:100px;
+  width: 100px;
+  height: 100px;
+}
+
+.ghost {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0.3;
 }
 
 .example {
@@ -94,29 +106,4 @@ h1 {
   border-radius: 10px;
   align: middle;
   border: solid #74748A;
-}
-
-#science {
-  background: url('../img/science.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-#refinery {
-  background: url('../img/refinery.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-#mine {
-  background: url('../img/mine.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-#hydro {
-  background: url('../img/hydro.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
 }

@@ -3,12 +3,10 @@ var Player = require('../db/models/player.js');
 
 var processPlayer = function(player) {
   var buildings = player.buildings;
-
   console.log('Player has %s water', player.resources.water);
 
   for (var i = 0; i < buildings.length; i++) {
     var building = buildings[i];
-    // console.log(building);
     switch (building.name) {
     case "hydro":
       player.resources.water += building.waterProduced;

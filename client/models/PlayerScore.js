@@ -7,7 +7,10 @@ var PlayerScore = Backbone.Model.extend({
     var playerScoreView = new PlayerScoreView({model: this});
   },
   
-  
+  refine: function(){
+    var currentResources = this.attributes;
+    console.log(currentResources);
+  },
   // helper function to check resouces when adding new buildings
   checkResource: function(building){
     var buildingCost = building.attributes.cost;

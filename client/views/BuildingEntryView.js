@@ -4,7 +4,7 @@ var BuildingEntryView = Backbone.View.extend({
   template: _.template(' <div class="example" id ="<%= name %>"></div>'),
 	
 	events: {
-		'mouseup': function(){
+		'click': function(){
       this.model.addToBoard();
 		}
 	},

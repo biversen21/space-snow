@@ -35,7 +35,6 @@ var AppModel = Backbone.Model.extend({
       if ((buildingCollection.length < 6) && (affordBuilding)) {
         buildingCollection.add(building.toJSON());
         playerModel.attributes.buildings.push(building);
-        // playerModel.attributes.resources.minerals -= building.attributes.cost;
         playerModel.save(null, {
           success: function() {
             console.log('player save success');

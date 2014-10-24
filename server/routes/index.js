@@ -24,7 +24,7 @@ router.put('/game', function(req, res) {
         res.send({'putSuccess': 'success'});
       }
     });
-  });  
+  });
 });
 
 router.get('/library', function(req, res) {

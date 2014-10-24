@@ -12,6 +12,7 @@ var BuildingEntryView = Backbone.View.extend({
     },
 
     'mouseup' : function(){
+      console.log('adding to board');
       this.model.addToBoard();
     }
   },

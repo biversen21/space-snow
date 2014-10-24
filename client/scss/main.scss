@@ -4,6 +4,9 @@ body {
   background-color: black;
   color: #eee;
   font-family: courier;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 h1 {
@@ -84,6 +87,13 @@ h1 {
   display: inline-block;
   width: 100px;
   height: 100px;
+}
+
+.ghost {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.3;
 }
 
 .example {

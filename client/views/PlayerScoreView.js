@@ -9,31 +9,27 @@ var PlayerScoreView = Backbone.View.extend({
   },
   
   events: {
-    "click .refine": function(){
-      console.log('fired');
+    'click .refine': function(){
       this.model.refine();
     }
   },
   
   render: function(){
     $('.statistics').empty();
-    var playerStats = "<h3>Statistics</h3>";
     
+    // builds html based on player attributes
+    var playerStats = "<h3>Statistics</h3>";
     playerStats += '<span class="playerStats">Name: ' + this.model.attributes.name + '<span><br>';
-    for (var resource in this.model.attributes) {
+    for (var resource in this.model.attributes.resources) {
       playerStats += '<span>' + resource + ': ' + this.model.attributes[resource] + '<span><br>';
     }
-    playerStats += '<span class="refine">Refine</span>';
+    
+    // checks if player has resources and refinery to add refine option
+    if (this.model.attributes.resources.minerals > 50 && this.model.checkRefinery()) {
+      playerStats += '<button class="refine">Refine</button>';      
+    }
+    
     return this.$el.append(playerStats);
-    
-    // $('.playerStats').remove();
-    // $('.statistics').append('<span class="playerStats">Name: ' + this.model.attributes.name + '<span><br>');
-    
-    // loops player score and renders resources
-    // for (var resource in this.model.attributes) {
-    //   $('.playerStats').append('<span>' + resource + ': ' + this.model.attributes[resource] + '<span><br>');
-    // }
-    // $('.playerStats').append('<button class="refine">Refine</button>');
   }
 	
 });

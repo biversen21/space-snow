@@ -3,10 +3,14 @@ var PlayerBuildingsView = Backbone.View.extend({
 	
 	initialize: function(){
 		this.render();
+    
+    // calls render function when new item added to collection
 		this.listenTo(this.collection, 'add', this.render);
 	},
 	
 	render: function(){
+    
+    // clear board before rendering to prevent duplicates
 		this.$el.children().detach();
 		$('.dump').empty();
 

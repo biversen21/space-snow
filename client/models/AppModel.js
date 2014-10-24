@@ -34,7 +34,6 @@ var AppModel = Backbone.Model.extend({
 
         currentResources.minerals -= 50;
         currentResources.moonitonium += 1;
-        
         playerModel.save();
       });
     };
@@ -54,7 +53,8 @@ var AppModel = Backbone.Model.extend({
       });
     }; 
     
-    setInterval(function() { updatePlayerData(); }, 1000);
+    // sets interval to synch with server once per second
+    setInterval(function() { updatePlayerData(); }, 500);
     
     // logic to handle whether building can be added to board based on size and resource cost
     params.buildingLibrary.on('addToBoard', function(building) {
@@ -69,7 +69,6 @@ var AppModel = Backbone.Model.extend({
         
         // adds buidling to playermodel
         playerModel.attributes.buildings.push(building);
-        that.playerScoreView.render();
         playerModel.save(null, {
           success: function() {
             console.log('player save success');

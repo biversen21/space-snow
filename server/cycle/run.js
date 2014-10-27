@@ -29,8 +29,12 @@ var processPlayer = function(player) {
     }
   };
   
-  player.resources.water += (currentWater * scienceMultiplier);
-  player.resources.minerals += (currentMineral * scienceMultiplier);
+  if (player.resources.water < 100) {
+    player.resources.water += (currentWater * scienceMultiplier);    
+  };
+  if (player.resources.minerals < 500) {
+    player.resources.minerals += (currentMineral * scienceMultiplier);    
+  }
 
   player.save();
 }

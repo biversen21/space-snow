@@ -62,7 +62,6 @@ var AppModel = Backbone.Model.extend({
 
       // runs playerscore method to check resource availability
       var affordBuilding = that.playerScore.checkResource(building);
-
       if ((buildingCollection.length < 10) && (affordBuilding)) {
 
         // adds building to building collection as JSON to allow multiple copies of single model

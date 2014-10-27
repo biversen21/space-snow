@@ -14,10 +14,10 @@ var PlayerBuildingsView = Backbone.View.extend({
 		this.$el.children().detach();
 		$('.dump').empty();
 
-      $('.dump').append(
+    $('.dump').append(
 		  this.collection.map(function(building){
 		  	return new PlayerBuildingsEntryView({model: building}).render();
-		  })
+		  });
 		);
 	}
 });

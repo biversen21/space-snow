@@ -23,7 +23,6 @@ var PlayerScoreView = Backbone.View.extend({
     playerStats += '<span class="playerStats">Name: ' + this.model.attributes.name + '<span><br>';
     var data = [];
     for (var resource in this.model.attributes.resources) {
-      // playerStats += '<span>' + resource + ': ' + this.model.attributes[resource] + '<span><br>';
       data.push(this.model.attributes[resource]);
     }
 
@@ -38,6 +37,8 @@ var PlayerScoreView = Backbone.View.extend({
     .enter().append('div')
     .style('width', function(d) { return d + 'px'; })
     .style('background-color', 'green')
+    .style('border', '2px solid black')
+    .style('margin-bottom', '10px')
     .text(function(d) { return d; });
 
     return this.$el.append(playerStats);

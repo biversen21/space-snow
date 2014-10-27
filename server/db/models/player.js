@@ -1,5 +1,5 @@
 var bcrypt = require('bcrypt-nodejs');
-var Promise = require('bluebird');
+var Bluebird = require('bluebird');
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -32,7 +32,7 @@ var PlayerSchema = new Schema({
 });
 
 PlayerSchema.pre('save', function(next) {
-  var cipher = Promise.promisify(bcrypt.hash);
+  var cipher = Bluebird.promisify(bcrypt.hash);
 
   cipher(this.password, null, null).bind(this)
     .then(function(hash) {
@@ -48,6 +48,6 @@ PlayerSchema.methods = {
       cb(isMatch);
     });
   }
-}
+};
 
 module.exports = mongoose.model('Player', PlayerSchema);

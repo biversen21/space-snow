@@ -16,13 +16,13 @@ var AppModel = Backbone.Model.extend({
 
         that.set('playerBuildings', new PlayerBuildings(playerBoard));
         that.playerScore = new PlayerScore(playerModel);
-        // that.playerScoreView = new PlayerScoreView({model: that.playerScore});
-        that.chart_one = new BarChartView({
-          el: '#one',
-          data: [3, 8, 12, 7, 17],
-          base_height: 220
-        });
-        that.chart_one.render();
+        that.playerScoreView = new PlayerScoreView({model: that.playerScore});
+        // that.chart_one = new BarChartView({
+        //   el: '#one',
+        //   data: [3, 8, 12, 7, 17],
+        //   base_height: 220
+        // });
+        // that.chart_one.render();
 
         // call binding method
         setupScore();
@@ -54,7 +54,7 @@ var AppModel = Backbone.Model.extend({
 
           // set playerscore attributes based on server response
           that.playerScore.set({minerals: playerResources.minerals, water: playerResources.water, moonitonium: playerResources.moonitonium});
-          // that.playerScoreView.render();
+          that.playerScoreView.render();
           buildingCollection = that.get('playerBuildings');
         }
       });

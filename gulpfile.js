@@ -134,7 +134,12 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('js', function() {
-  return gulp.src(['client/models/*.js', 'client/**/*.js'])
+  return gulp.src(['client/views/ChartView.js', 'client/views/BarChartView.js', 
+  'client/models/Building.js', 'client/views/BuildingEntryView.js', 'client/views/BuildingsView.js', 
+  'client/collections/Buildings.js', 'client/views/PlayerBuildingsEntryView.js', 
+  'client/views/PlayerBuildingsView.js', 'client/collections/PlayerBuildings.js', 
+  'client/models/PlayerModel.js', 'client/models/PlayerScore.js', 'client/models/*.js', 'client/**/*.js'])
+    
     .pipe(concat('main.js'))
     .pipe(gulp.dest('public/js'))
     .pipe(rename('main.min.js'))

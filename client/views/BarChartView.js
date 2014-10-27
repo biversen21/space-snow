@@ -5,7 +5,7 @@ var BarChartView = ChartView.extend({
       .domain([0, d3.max(this.data)])
       .range([0, this.dimensions.width]);
 
-    d3.select('.chartSpot')
+    d3.select('.statistics')
       .attr('class', 'bar-chart')
         .selectAll('div')
           .data(this.data)

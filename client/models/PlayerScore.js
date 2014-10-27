@@ -12,10 +12,12 @@ var PlayerScore = Backbone.Model.extend({
   },
   
   checkRefinery: function(){
-    for (var key in this.attributes.buildings) {
-      if (this.attributes.buildings[key].name === 'refinery') {
-        return true;
-      }
+    if (this.attributes.resources.minerals >= 50) {
+      for (var key in this.attributes.buildings) {
+        if (this.attributes.buildings[key].name === 'refinery') {
+          return true;
+        }
+      }      
     }
   },
   

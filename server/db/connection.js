@@ -19,9 +19,9 @@ connection.once('open', function callback () {
     if (!err && buildings.length === 0) {
       for (var i = 0; i < library.length; i++) {
         new Building(library[i]).save();
-      };
+      }
     }
-  })
+  });
 
   // Stub in a player if none exists
   Player.find({}, function(err, players) {
@@ -30,7 +30,7 @@ connection.once('open', function callback () {
       console.log('Therefore I am inserting a new record');
       new Player(playerStub).save();
     }
-  })
+  });
   
 });
 

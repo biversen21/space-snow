@@ -34,4 +34,4 @@ module.exports = [
     cost: 6,
     underConstruction: true
   }
-]
+];

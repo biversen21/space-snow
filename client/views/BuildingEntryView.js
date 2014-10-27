@@ -10,6 +10,7 @@ var BuildingEntryView = Backbone.View.extend({
       that = this;
       this.model.drag(clickEvent, that);
     }
+
   },
 
   render: function(){

@@ -34,8 +34,8 @@ var processPlayer = function(player) {
   if (player.resources.water > 100) {
     player.resources.water = 100;
   }
-  if (player.resources.minerals > 500) {
-    player.resources.minerals = 500;
+  if (player.resources.minerals > 400) {
+    player.resources.minerals = 400;
   }
 
   player.save();

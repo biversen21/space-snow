@@ -11,6 +11,7 @@ var rename = require('gulp-rename');
 var nodemon = require('gulp-nodemon');
 var sass = require('gulp-sass');
 var mocha = require('gulp-mocha');
+var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
 gulp.task('bower', function(cb){
   bower.commands.install([], {save: true}, {})
@@ -141,13 +142,20 @@ gulp.task('js', function() {
     .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('test', function () {
-  return gulp.src('test/**/*.js')
-    .pipe(mocha())
-    .once('end', function () {
-      process.exit();
-    });;
+// Run server-side tests
+gulp.task('test-server', function () {
+  return gulp.src('test/server/**/*.js')
+    .pipe(mocha());
 });
+
+// Use PhantomJS to run client-side tests
+gulp.task('test-client', function () {
+  return gulp.src('test/SpecRunner.html')
+    .pipe(mochaPhantomJS());
+});
+
+// Run all tests
+gulp.task('test', ['test-server', 'test-client']);
 
 // Install and concat/minify all the correct files for production
 gulp.task('deploy', ['bundle-libraries-auto', 'js', 'sass']);

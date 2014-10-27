@@ -15,7 +15,6 @@ router.get('/game', function(req, res) {
 });
 
 router.put('/game', function(req, res) {
-  console.log(req.body);
   Player.findOne({ name: 'Space Sheep' }, function(err, player) {
     player.update(req.body, { overwrite: true }, function(err) {
       if (!err) {

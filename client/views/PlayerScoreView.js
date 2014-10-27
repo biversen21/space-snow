@@ -25,8 +25,8 @@ var PlayerScoreView = Backbone.View.extend({
     }
 
     // checks if player has resources and refinery to add refine option
-    if (this.model.attributes.resources.minerals > 50 && this.model.checkRefinery()) {
-      playerStats += '<button class="refine">Refine</button>';
+    if (this.model.checkRefinery()) {
+      playerStats += '<button class="refine">Refine</button>';      
     }
 
     return this.$el.append(playerStats);

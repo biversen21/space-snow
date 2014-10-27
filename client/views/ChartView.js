@@ -120,7 +120,11 @@ $(function() {
             .html(function(d) { return '<span>' + d + '</span>'; });
     }
   });
-
+  var DonutChartView = ChartView.extend({
+    draw: function() {
+      
+    }
+  })
   var chart_one_data = [3, 8, 12, 7, 17];
   var chart_two_data = [4, 10, 13, 14, 7];
     

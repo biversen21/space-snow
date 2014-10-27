@@ -13,6 +13,23 @@ h1 {
   font-size: 26pt;
   color: #575769;
 }
+
+b {
+  font-size: 11pt;
+}
+
+ul {
+  position: absolute;
+  bottom: 0px;
+}
+
+li {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0px;
+  text-align: left;
+}
+
 .h4 {
   padding: 2px;
 }
@@ -65,6 +82,8 @@ h1 {
   width: 100%;
   height: 80%;
   opacity: 0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .dump {
@@ -80,7 +99,7 @@ h1 {
   position: absolute;
   bottom: 10px;
   background-color: #575769;
-  width: 20%;
+  width: 30%;
   height: 25%;
   border-radius:10px;
   display: inline-block;
@@ -91,10 +110,23 @@ h1 {
   bottom: 10px;
   right: 0px;
   background-color: #575769;
-  width: 78.7%;
+  width: 68.7%;
   height: 25%;
   border-radius:10px;
   display: inline-block;
+}
+
+.container {
+  margin-top: 18px;
+  width: 200px;
+  display: inline-block;
+  font-size: 9pt;
+  vertical-align: middle;
+}
+
+.refine {
+  margin: 10px;
+  width: 100px;
 }
 
 .onScreen {
@@ -109,13 +141,11 @@ h1 {
 }
 
 .example {
-  position: relative;
-  left: 18px;
-  top: 18px;
-  display: inline-block;
-  height: 80%;
+  position: absolute;
+  margin: 10px 0px 0px 20px;
+  top: 0px;
+  height: 50%;
   width: 15%;
   border-radius: 10px;
-  align: middle;
   border: solid #74748A;
 }

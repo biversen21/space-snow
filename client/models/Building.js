@@ -11,7 +11,7 @@ var Building = Backbone.Model.extend({
     var position;
 
     // clone building div
-    var ghost = that.$el.children(':first').clone(true);
+    var ghost = that.$el.children(':first').children(':first').clone(true);
 
     // superimpose transparent image
     $(ghost)

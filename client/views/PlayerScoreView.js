@@ -15,6 +15,7 @@ var PlayerScoreView = Backbone.View.extend({
   },
 
   render: function(){
+    $('.buy').empty();
     $('.statistics').empty();
 
     // builds html based on player attributes
@@ -31,14 +32,13 @@ var PlayerScoreView = Backbone.View.extend({
       playerStats += '<button class="refine">Refine</button>';      
     }
 
-    // var body = d3.select(".buy");
-    // var div = body.append("div");
-    // d3.select(".chart")
-    // .selectAll("div")
-    // .data(data)
-    // .enter().append("div")
-    // .style("width", function(d) { return d * 10 + "px"; })
-    // .text(function(d) { return d; });
+    d3.select(".buy")
+    .selectAll("div")
+    .data(data)
+    .enter().append("div")
+    .style("width", function(d) { return d + "px"; })
+    .style('background-color', 'green')
+    .text(function(d) { return d; });
 
     return this.$el.append(playerStats);
   }

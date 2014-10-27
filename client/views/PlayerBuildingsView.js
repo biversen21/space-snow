@@ -17,7 +17,7 @@ var PlayerBuildingsView = Backbone.View.extend({
     $('.dump').append(
 		  this.collection.map(function(building){
 		  	return new PlayerBuildingsEntryView({model: building}).render();
-		  });
+		  })
 		);
 	}
 });

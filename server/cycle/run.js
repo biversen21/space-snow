@@ -14,7 +14,7 @@ var processPlayer = function(player) {
       currentWater += building.waterProduced;
       break;
     case "mine":
-      if (player.resources.water > building.waterConsumed) {
+      if ((player.resources.water > building.waterConsumed) && (player.resources.minerals < 500)) {
         player.resources.water -= building.waterConsumed;
         currentMineral += building.mineralsProduced;
       }
@@ -32,9 +32,8 @@ var processPlayer = function(player) {
   if (player.resources.water < 100) {
     player.resources.water += (currentWater * scienceMultiplier);    
   };
-  if (player.resources.minerals < 500) {
-    player.resources.minerals += (currentMineral * scienceMultiplier);    
-  }
+  player.resources.minerals += (currentMineral * scienceMultiplier);    
+
 
   player.save();
 }

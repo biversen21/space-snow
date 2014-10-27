@@ -20,7 +20,7 @@ var AppModel = Backbone.Model.extend({
 
         // call binding method
         setupScore();
-
+        
         // callback triggers, creating appView which is dependent upon above attributes
         cb();
         buildingCollection = that.get('playerBuildings');

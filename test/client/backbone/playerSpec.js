@@ -1,5 +1,13 @@
 beforeEach(function(){
   
+  science = new Building({
+    name: 'science',
+    imgUrl: 'science.png',
+    size: 3,
+    cost: 6,
+    underConstruction: true
+  });
+  
   playerModel = new PlayerModel({
   
     password: 'abracadabra',
@@ -36,6 +44,7 @@ beforeEach(function(){
       netWaterPerTurn: 3,
     }
   });
+
 });
 
 describe('Player', function(){
@@ -46,5 +55,6 @@ describe('Player', function(){
   it('populates player building collection', function(){
     expect(playerModel.attributes.buildings.length).to.equal(1);
     expect(playerModel.attributes.buildings[0].name).to.equal('hydro');
-  })
+  });
+  
 })

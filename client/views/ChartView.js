@@ -34,6 +34,7 @@ var ChartView = Backbone.View.extend({
     }
     Backbone.View.apply(this, arguments);
   },
+  
   initialize: function(options) {
     // Wrap chart
     this.$el.wrap($('<div class="chart-wrapper">'));
@@ -48,6 +49,7 @@ var ChartView = Backbone.View.extend({
 
     $(window).on("resize", _.debounce(_.bind(this.render, this), 100));
   },
+  
   get_dimensions: function() {
     var window_width = $(window).width();
 
@@ -87,10 +89,12 @@ var ChartView = Backbone.View.extend({
     this.get_dimensions();
     this.draw();
   },
+  
   draw: function() {
     console.log("override ChartView's draw function with your d3 code");
     return this;
   },
+  
   fallback_draw: function() {
     this.$el.html(
       '<div class="alert"><p><strong>Warning!</strong> You are using an unsupported browser. ' +
@@ -104,22 +108,22 @@ var ChartView = Backbone.View.extend({
 });
 
 $(function() {
-  var BarChartView = ChartView.extend({
-    draw: function() {
-      var scale = d3.scale.linear()
-        .domain([0, d3.max(this.data)])
-        .range([0, this.dimensions.width]);
-
-      d3.select(this.el)
-        .attr('class', 'bar-chart')
-          .selectAll('div')
-            .data(this.data)
-          .enter().append('div')
-            .style('width', function(d) { return scale(d) + 'px'; })
-            .style('height', (this.dimensions.wrapperHeight / 5) + 'px')
-            .html(function(d) { return '<span>' + d + '</span>'; });
-    }
-  });
+  // var BarChartView = ChartView.extend({
+  //   draw: function() {
+  //     var scale = d3.scale.linear()
+  //       .domain([0, d3.max(this.data)])
+  //       .range([0, this.dimensions.width]);
+  //
+  //     d3.select(this.el)
+  //       .attr('class', 'bar-chart')
+  //         .selectAll('div')
+  //           .data(this.data)
+  //         .enter().append('div')
+  //           .style('width', function(d) { return scale(d) + 'px'; })
+  //           .style('height', (this.dimensions.wrapperHeight / 5) + 'px')
+  //           .html(function(d) { return '<span>' + d + '</span>'; });
+  //   }
+  // });
   var DonutChartView = ChartView.extend({
     draw: function() {
       var color = d3.scale.category10();

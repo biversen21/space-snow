@@ -38,9 +38,17 @@ beforeEach(function(){
   ]);
 })
 
-describe('Application', function(){
-  it('creates an building library collection', function(){
+describe('Building Library', function(){
+  it('creates a building library collection', function(){
     expect(fakeLibrary).to.be.ok;
+    expect(fakeLibrary.length).to.equal(4);
+  });
+  
+  it('creates an app model with building collection', function(){
+    var app = new AppModel({buildingLibrary: fakeLibrary});
+    expect(app).to.be.ok;
+    expect(app.attributes.buildingLibrary.length).to.equal(4);
+    expect(app.attributes.buildingLibrary.models[0].attributes.name).to.equal('hydro');
   });
   
 })

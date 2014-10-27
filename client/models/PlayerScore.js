@@ -11,6 +11,7 @@ var PlayerScore = Backbone.Model.extend({
     this.trigger('refineMinerals', this);
   },
   
+  // helper function to check if player has requirements to refine minerals
   checkRefinery: function(){
     if (this.attributes.resources.minerals >= 50) {
       for (var key in this.attributes.buildings) {

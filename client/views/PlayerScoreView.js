@@ -31,7 +31,7 @@ var PlayerScoreView = Backbone.View.extend({
       playerStats += '<button class="refine">Refine</button>';      
     }
 
-    // var body = d3.select("body");
+    // var body = d3.select(".buy");
     // var div = body.append("div");
     // d3.select(".chart")
     // .selectAll("div")

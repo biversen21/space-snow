@@ -23,7 +23,7 @@ module.exports = [
     name: 'refinery',
     imgUrl: 'refinery.png',
     size: 3,
-    cost: 5,
+    cost: 50,
     underConstruction: false
   },
   {
@@ -31,7 +31,7 @@ module.exports = [
     name: 'science',
     imgUrl: 'science.png',
     size: 3,
-    cost: 6,
+    cost: 20,
     underConstruction: true
   }
 ];

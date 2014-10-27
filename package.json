@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "MONGO_URI=mongodb://MongoLab-w:lah0MK._5_XLAcwDg25gdBwuCHIqh6L5zGI_zLslr48-@ds030607.mongolab.com:30607/MongoLab-w node ./bin/www",
+    "start": "node ./bin/www",
     "test": "gulp test"
   },
   "dependencies": {

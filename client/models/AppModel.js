@@ -31,10 +31,11 @@ var AppModel = Backbone.Model.extend({
     var setupScore = function() {
       that.playerScore.on('refineMinerals', function(){
         var currentResources = playerModel.attributes.resources;
-
-        currentResources.minerals -= 50;
-        currentResources.moonitonium += 1;
-        playerModel.save();
+        if (currentResources.minerals >= 50) {
+          currentResources.minerals -= 50;
+          currentResources.moonitonium += 1;
+          playerModel.save();          
+        }
       });
     };
 
@@ -69,11 +70,7 @@ var AppModel = Backbone.Model.extend({
 
         // adds buidling to playermodel
         playerModel.attributes.buildings.push(building);
-        playerModel.save(null, {
-          success: function() {
-            console.log('player save success');
-          }
-        });
+        playerModel.save();
       } else if (!affordBuilding){
         alert('You can\'t afford that!');
       } else {

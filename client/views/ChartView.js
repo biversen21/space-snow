@@ -153,10 +153,4 @@ $(function() {
   //   base_height: 220
   // }).render();
 
-  // var chart_two = new BarChartView({
-  //   el: '#two',
-  //   data: chart_two_data,
-  //   base_height: 220
-  // }).render();
-    
 });

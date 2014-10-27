@@ -116,7 +116,10 @@ gulp.task('clearPlayers', function() {
 
 // Lint Task
 gulp.task('lint', function() {
-  return gulp.src('client/**/*.js')
+  return gulp.src([
+    'public/js/main.js',
+    'server/**/*.js'
+  ])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });

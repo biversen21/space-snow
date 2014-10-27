@@ -12,8 +12,6 @@ var nodemon = require('gulp-nodemon');
 var sass = require('gulp-sass');
 var mocha = require('gulp-mocha');
 
-var connection = require('./server/db/connection.js');
-
 gulp.task('bower', function(cb){
   bower.commands.install([], {save: true}, {})
     .on('end', function(installed){
@@ -101,6 +99,7 @@ gulp.task('nodemon', ['lint', 'bundle-libraries-auto', 'js', 'sass'], function()
 });
 
 gulp.task('clearLibrary', function() {
+  var connection = require('./server/db/connection.js');
   connection.once('open', function callback () {
     connection.db.dropCollection('buildings');
     process.exit();
@@ -108,6 +107,7 @@ gulp.task('clearLibrary', function() {
 });
 
 gulp.task('clearPlayers', function() {
+  var connection = require('./server/db/connection.js');
   connection.once('open', function callback () {
     connection.db.dropCollection('players');
     process.exit();

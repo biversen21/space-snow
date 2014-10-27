@@ -1,6 +1,5 @@
 module.exports = [
   {
-    // id: 0,
     name: 'hydro',
     imgUrl: 'hydro.png',
     position: 0,
@@ -10,7 +9,6 @@ module.exports = [
     underConstruction: false
   },
   {
-    // id: 1,
     name: 'mine',
     imgUrl: 'mine.png',
     position: 2,
@@ -19,7 +17,6 @@ module.exports = [
     underConstruction: false
   },
   {
-    // id: 2,
     name: 'refinery',
     imgUrl: 'refinery.png',
     position: 4,
@@ -28,7 +25,6 @@ module.exports = [
     underConstruction: false
   },
   {
-    // id: 3,
     name: 'science',
     imgUrl: 'science.png',
     position: 7,
@@ -36,4 +32,4 @@ module.exports = [
     cost: 6,
     underConstruction: true
   }
-]
+];

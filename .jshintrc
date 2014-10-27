@@ -13,8 +13,9 @@
     "quotmark": "single",
     "regexp": true,
     "undef": true,
+    "predef": ["$", "_", "Backbone"],
     "unused": true,
-    "strict": true,
+    "strict": false,
     "trailing": true,
     "smarttabs": true,
     "white": true

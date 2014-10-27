@@ -3,8 +3,6 @@ var router = express.Router();
 var Building = require('../db/models/building.js');
 var Player = require('../db/models/player.js');
 
-var id;
-
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Moon Base' });

@@ -16,6 +16,7 @@ var AppModel = Backbone.Model.extend({
 
         that.set('playerBuildings', new PlayerBuildings(playerBoard));
         that.playerScore = new PlayerScore(playerModel);
+        // that.playerScoreView = new PlayerScoreView({model: that.playerScore});
         that.chart_one = new BarChartView({
           el: '#one',
           data: [3, 8, 12, 7, 17],

@@ -34,12 +34,11 @@
       buildingLibrary.fetch({
         success: function(buildingLibrary) {
           var app = new AppModel({buildingLibrary: buildingLibrary}, function(){
-            var appView = new AppView({model: app});            
-            $('body').append(appView.render());          
-          });      
+            var appView = new AppView({model: app});
+            $('body').append(appView.render());
+          });
         }
       });
-      
 
     })
   </script>

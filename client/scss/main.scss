@@ -85,15 +85,13 @@ h1 {
 
 .onScreen {
   display: inline-block;
-  width: 100px;
-  height: 100px;
 }
 
 .ghost {
   position: absolute;
-  width: 150px;
-  height: 150px;
   opacity: 0.3;
+  height: 150px;
+  width: 150px;
 }
 
 .example {

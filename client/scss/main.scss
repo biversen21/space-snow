@@ -75,6 +75,42 @@ li {
   z-index: 1;
 }
 
+.refineExp {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 300px;
+  height: 150px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: white;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.refineText {
+  font-size: 10pt;
+  color: black;
+  margin: 10px;
+}
+
+.buildExp {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 400px;
+  height: 150px;
+  width: 500px;
+  border-radius: 10px;
+  background-color: white;
+  opacity: 0.8;
+  z-index: 12;
+}
+
+.chart div {
+  background-color: green;
+}
+
 .shield {
   position: absolute;
   bottom: 0px;
@@ -148,4 +184,55 @@ li {
   width: 15%;
   border-radius: 10px;
   border: solid #74748A;
+}
+
+.Q {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: url('/img/question.png');
+  background-size: contain;
+  z-index: 10;
+}
+
+.refining {
+  top: 30px;
+  right: 30px;
+}
+
+.constructing {
+  bottom: 30px;
+  right: 20px;
+}
+
+.infocontainer {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 12pt;
+  font-color: black;
+  z-index: 10;
+  opacity: 0.8;
+  text-align: center;
+  display: none;
+}
+
+.buildinginfotext {
+  padding: 30px;
+  color: black;
+  display: none;
+}
+
+.info {
+  position: absolute;
+  bottom: 70px;
+  right: 10px;
+  color: white;
+  font-size: 10pt;
+  font-color: black;
+  z-index: 10;
 }

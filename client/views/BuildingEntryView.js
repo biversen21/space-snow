@@ -11,7 +11,7 @@ var BuildingEntryView = Backbone.View.extend({
       var that = this;
       this.model.drag(clickEvent, that);
     },
-
+    // currently useless
     'mouseover': function(event){
       var id = this.$el.children(':first').children(':first').attr('id');
     }

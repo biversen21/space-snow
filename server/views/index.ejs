@@ -6,12 +6,24 @@
   </head>
   <body>
     <div class='background'>
-      <h1>SPACE BASE</h1>
-     <!--  <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p> -->
+      <h1>MOON BASE</h1>
       <div class='auth'>
         <h3>Logout</h3>
       </div>
+      <!-- informative text, initally toggled off -->
+      <div class="refineExp"><p class="refineText">Build a refinery to turn 50 units of minerals into one unit of Moontonium. Once you have 100 units of Moontonium, you can expand your shield<p></div>
+
+      <div class="buildExp"><p class="refineText">Begin construction of structures in order to scrape out a living on this desolate moon. You brought just enough raw materials to create a few buildings, and now you must fight to gather more. Eventually you may be able to refine raw minerals into moonitonium, the rare and powerful material that will allow you to expand your shield and therefore your territory. Fare well, daring space explorer. Beware of space sheep.</p></div>
+        <!-- building information -->
+      <div class="infocontainer">
+        <span class="buildinginfotext" id="hydroExp">Water is required for your mines to function properly. Place hydrofarms to collect ambient water and begin building up a supply</span>
+        <span class="buildinginfotext" id="mineExp">Build mines to extract valuable minerals from the moon’s surface. These minerals will allow you to build more structures, or can be converted into precious moonitonum</span>
+        <span class="buildinginfotext" id="refineryExp">A refinery will allow you to convert 50 mineral units into one precious unit of moonitonium, a rare material necessary to power the protective shield that covers your moon colony</span>
+        <span class="buildinginfotext" id="scienceExp">Everybody needs science! Adding science labs will double your mine and hydrofarm output. </span>
+      </div>
+      <!-- end informative building text -->
+
+      <div class="Q refining"></div>
       <div class='statistics'>
         <h3>Statistics</h3>
         <div class='chartSpot'></div>
@@ -20,6 +32,14 @@
       <div class="dump"></div>
     </div>
     <div class='userControls'>
+      <ul class="info">
+        <li class"entry" id="hydroinfo">Hydrofarm</li>
+        <li class"entry" id="mineinfo">Mine</li>
+        <li class"entry" id="refineryinfo">Refinery</li>
+        <li class"entry" id="scienceinfo">Science Lab</li>
+      </ul>
+
+      <div class="Q constructing"></div>
       <div class='buy'></div>
       <div class='build'>
       </div>

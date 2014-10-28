@@ -9,14 +9,11 @@ var BuildingEntryView = Backbone.View.extend({
     'mousedown': function(event){
       var clickEvent = event;
       var that = this;
-      console.log(event);
-      console.log(this);
       this.model.drag(clickEvent, that);
     },
-
+    // currently useless
     'mouseover': function(event){
       var id = this.$el.children(':first').children(':first').attr('id');
-      console.log(id);
     }
   },
 

@@ -27,7 +27,7 @@ var AppModel = Backbone.Model.extend({
       }
     });
 
-    // function to bind refineMinerals to playerscore model. processes refining mechanics
+    // function to bind refineMinerals to playerscore model. processes refining mechanics.
     var setupScore = function() {
       that.playerScore.on('refineMinerals', function(){
         var currentResources = playerModel.attributes.resources;

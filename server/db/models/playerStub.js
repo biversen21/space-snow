@@ -6,8 +6,8 @@ module.exports = {
     buildings: [],
 
     resources: {
-      water: 75,
-      minerals: 20,
+      water: 0,
+      minerals: 6,
       moonitonium: 0
     },
 

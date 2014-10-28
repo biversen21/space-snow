@@ -5,7 +5,6 @@ $(document).ready(function(){
   })
 
   $('.constructing').on('click', function(){
-    console.log('okokokok')
     $('.buildExp').toggle();
   })
 

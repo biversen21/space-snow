@@ -59,10 +59,10 @@ var AppModel = Backbone.Model.extend({
 
     // logic to handle whether building can be added to board based on size and resource cost
     params.buildingLibrary.on('addToBoard', function(building) {
-
+      
       // runs playerscore method to check resource availability
       var affordBuilding = that.playerScore.checkResource(building);
-      if ((buildingCollection.length < 10) && (affordBuilding)) {
+      if ((buildingCollection.checkSize() < 20) && (affordBuilding)) {
 
         // adds building to building collection as JSON to allow multiple copies of single model
         buildingCollection.add(building.toJSON());

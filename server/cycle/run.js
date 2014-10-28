@@ -13,7 +13,7 @@ var processPlayer = function(player) {
       currentWater += building.waterProduced;
       break;
     case 'mine':
-      if (player.resources.water > building.waterConsumed && player.resources.minerals < 500) {
+      if (player.resources.water > building.waterConsumed && player.resources.minerals < 400) {
         player.resources.water -= building.waterConsumed;
         currentMineral += building.mineralsProduced;
       }

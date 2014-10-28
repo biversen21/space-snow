@@ -18,11 +18,14 @@ var PlayerScoreView = Backbone.View.extend({
     $('.buy').empty();
     $('.statistics').empty();
 
-    // builds html based on player attributes
     var playerStats = '<h3>Statistics</h3>';
     playerStats += '<span class="playerStats">Name: ' + this.model.attributes.name + '<span><br>';
+    
+    // create and populate data array of resource values
     var data = [];
+    var theResource = [];
     for (var resource in this.model.attributes.resources) {
+      theResource.push(resource)
       data.push(this.model.attributes[resource]);
     }
 
@@ -31,6 +34,7 @@ var PlayerScoreView = Backbone.View.extend({
       playerStats += '<button class="refine">Refine</button>';      
     }
 
+    // creates bar chart for each resource value in data array
     d3.select('.buy')
     .selectAll('div')
     .data(data)
@@ -39,7 +43,7 @@ var PlayerScoreView = Backbone.View.extend({
     .style('background-color', 'green')
     .style('border', '2px solid black')
     .style('margin-bottom', '10px')
-    .text(function(d) { return d; });
+    .text(function(d, i) { return theResource[i] + ': ' + d; });
 
     return this.$el.append(playerStats);
   }
